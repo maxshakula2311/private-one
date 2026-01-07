@@ -7,7 +7,7 @@
 body {
   margin: 0 auto;
   /* background-color: #fff2d3; */
-    background-color: #c0eafa;
+  background-color: #c0eafa;
 }
 h1 {
   font-family: "Pacifico", sans-serif;
@@ -83,6 +83,12 @@ section {
 .bio-container {
   border: 1px solid #aaaaaa;
   border-top: none;
+}
+
+/* Give every section's inner container (and sections that are themselves `.container`) the same border as the bio section */
+section.container,
+section > .container {
+  border: 1px solid #aaaaaa;
 }
 .bio-heading {
   font-size: 35px;
@@ -235,7 +241,8 @@ section {
 .schemes-box {
   padding: 30px 14px;
 }
-.scheme-one, .scheme-two {
+.scheme-one,
+.scheme-two {
   width: 500px;
   border: 2px dashed #1e29cb;
 }
@@ -251,4 +258,82 @@ section {
   display: flex;
   gap: 30px;
   justify-content: center;
+}
+
+/* Video gallery */
+.video-gallery .videos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  align-items: stretch; /* ensure each grid cell stretches to same height */
+  align-content: start;
+}
+.video-card {
+  background: #bfeffb; /* slightly lighter than .container (#9de1fa) */
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  height: 100%;
+  min-width: 0; /* allow grid items to shrink instead of forcing column width */
+}
+.video-card .video-title {
+  font-family: "Caveat", sans-serif;
+  font-size: 18px;
+  text-align: center;
+  color: #47433b;
+  white-space: normal; /* allow wrapping so long titles don't expand the column */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 28px;
+}
+.video-card video {
+  width: 100%;
+  height: 220px; /* fixed height so grid videos are uniform */
+  object-fit: cover; /* crop to fill area without distortion */
+  border-radius: 6px;
+  background: #000;
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .video-gallery .videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .video-card video {
+    height: 200px;
+  }
+}
+
+@media (max-width: 540px) {
+  .video-gallery .videos-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .video-card video {
+    height: 300px;
+  }
+}
+
+/* margin for the user-created section */
+.ai-gallery {
+  margin: 50px 0;
+}
+.live-videos-grid-paragraph {
+  padding: 0 20px 25px 0;
+  font-size: 22px;
+  letter-spacing: 1.5;
+  text-align: center;
+}
+.video-gallery {
+  margin-bottom: 50px;
+  padding: 50px 0;
+}
+.videos-grid-paragraph {
+  padding: 0 20px 25px 0;
+  font-size: 22px;
+  letter-spacing: 1.5;
+  text-align: center;
 }
