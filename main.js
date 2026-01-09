@@ -42,3 +42,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Loader modal: show on every page load, hide after 5s with smooth fade
+document.addEventListener("DOMContentLoaded", function () {
+  var modal = document.querySelector(".loader-modal");
+  if (!modal) return;
+
+  // prevent scrolling while modal is visible
+  var prevOverflow = document.documentElement.style.overflow;
+  document.documentElement.style.overflow = "hidden";
+
+  // After 5 seconds, fade out then remove
+  setTimeout(function () {
+    modal.classList.add("fade-out");
+    // restore scrolling immediately when fade starts
+    document.documentElement.style.overflow = prevOverflow || "";
+    modal.addEventListener(
+      "transitionend",
+      function () {
+        try {
+          modal.remove();
+        } catch (e) {
+          modal.style.display = "none";
+        }
+      },
+      { once: true }
+    );
+  }, 5000);
+});

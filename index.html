@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="./img/trident.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./img/trident.svg">
+    <meta name="theme-color" content="#5cbfe3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pacifico&family=Rubik+Bubbles&display=swap" rel="stylesheet">
-    <title>Test</title>
+    <title>В. Симоненко</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/basiclightbox/5.0.4/basicLightbox.min.css" integrity="sha512-0r5E3rH4tZ4m0i7X6y1Q1k+6qkQ9q3c0F2gV7kZk6QmF8bZ+q2q5g1n3zX0o6P3p9b1v2Y4p6c8w9rT2s5u1g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -22,6 +25,8 @@
     <main>
         <img src="./img/blue-flower.png" alt="Blue flower" class="blue-flower">
         <img src="./img/blue-flower-2.png" alt="Blue flower 2" class="blue-flower-scnd">
+        <img src="./img/ornament.png" alt="Ornament" class="side-ornament">
+        <img src="./img/ornament.png" alt="Ornament" class="side-ornament-scnd">
         <section class="bio" id="bio">
             <div class="container bio-container">
                 <h1>Василь Симоненко</h1>
@@ -117,6 +122,12 @@
     <footer>
         <p class="footer-paragraph"></p>
     </footer>
+
+    <!-- Loader modal (shows on every page load for 5s, then fades) -->
+    <div class="loader-modal" role="dialog" aria-label="Loading" aria-hidden="false">
+        <div class="loader" aria-hidden="true"></div>
+    </div>
+
 </body>
 
 <script type="module" src="./main.js"></script>
@@ -126,3 +137,12 @@
 </html>
 
 <!-- #c7e7f2 #d5f3fe -->
+<!--
+To regenerate video data files from the project root, run these commands in a terminal:
+
+PowerShell / Windows CMD:
+  node scripts/generateVideosList.js
+  node scripts/generateLiveVideosList.js
+
+(Run both from the project root: the folder containing `index.html`.)
+-->
