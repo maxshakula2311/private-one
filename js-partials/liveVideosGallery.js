@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   grid.className = "videos-grid";
   videos.forEach((item) => grid.appendChild(createCard(item)));
 
-  container.innerHTML = "<h2 class='live-videos-grid-heading'>Живий голос Василя Симоненка</h2><p class='live-videos-grid-paragraph'>Чи хотіли б Ви почути, як Василь Симоненко читає власні вірші? Дана галерея містить 15 записів живого голосу поета. Можете прослухати та скачати собі. Увага! Щоб відкрити відео у новому вікні, натисніть на його назву.</p>";
+  container.innerHTML = "<h2 class='live-videos-grid-heading'>Живий голос Василя Симоненка</h2><p class='live-videos-grid-paragraph'>Чи хотіли б Ви почути, як Василь Симоненко читає власні вірші? Дана галерея містить 15 записів живого голосу поета. Можете прослухати та завантажити собі. Увага! Щоб відкрити відео у новому вікні, натисніть на його назву.</p>";
   container.appendChild(grid);
 });
 
